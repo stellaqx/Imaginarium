@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "ImageViewController.h"
 
 @interface ViewController ()
 
@@ -19,5 +20,14 @@
     // Do any additional setup after loading the view.
 }
 
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    ImageViewController *ivc = (ImageViewController *) segue.destinationViewController;
+    
+    ivc.imageURL = [NSURL URLWithString: @"https://picjumbo.com/wp-content/uploads/snowy-mountain-peak-with-sunrise-glow-2210x1243.jpg"];
+    ivc.title = @"Snow Mountain";
+    
+}
 
 @end
